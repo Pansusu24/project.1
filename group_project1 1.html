@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Boothstrap CDN links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <style>
+        .list_style_hover:active{
+            color: white;
+        }
+        .list_style_hover{
+            color: rgb(50, 79, 194);
+        }
+        @media screen and (max-width:968px){
+            .catagory-container{
+                display: none;
+            }
+            .menuButton{
+                display: block;
+            }
+            .text-screenResponsive-container{
+                display: block;
+            }
+        }
+        @media screen and (min-width:969px){
+            .menuButton{
+                display: none;
+            }
+            #subjectMenu{
+                display: none;
+            }
+            .text-screenResponsive-container{
+                display: none;
+            }
+        }
+        
+        /* offcanvas style */
+        .offcanvas-subMenu {
+            width: 260px;
+            background-color: #e6ddf6;
+        }
+ 
+        .button-item {
+            background-color: #6a5c7d;
+            border: none;
+            color: #2d5cff;
+        }
+ 
+        .button-item:hover {
+            background-color: #594e6a;
+        }
+        .active-item{
+            background-color:  #594e6a;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(251, 251, 251); ">
+        <div class="container-fluid">
+            <!-- Brand -->
+            <a href="#" class="navbar-brand ms-3">
+                <img src="Image/landscape2.jpg" alt="logo" width="50" height="50"class="rounded">
+            </a>
+            
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav_id">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+ 
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse text-center" id="nav_id">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">About</a></li>
+ 
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">English</a></li>
+                        <li><a href="#" class="dropdown-item"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Mathemathics</a></li>
+                        <li><a href="#" class="dropdown-item"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Science</a></li>
+                        <li><a href="#" class="dropdown-item"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Business Studies</a></li>
+                        <li><a href="#" class="dropdown-item"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Economics</a></li>
+                        <li><a href="#" class="dropdown-item"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Accounting</a></li>
+                        <li><a href="#" class="dropdown-item"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">ICT</a></li>
+                        <li><a href="#" class="dropdown-item"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Computer Science</a></li>
+                    </ul>
+                </li>
+            </ul>
+ 
+            <ul class="navbar-nav ms-auto me-lg-3">
+                <li class="nav-item"><a href="#login_id" data-bs-toggle="modal" class="nav-link"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Login</a></li>
+                <li class="nav-item"><a href="#register_id" data-bs-toggle="modal" class="nav-link"style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Register</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="container menuButton">
+        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#subjectMenu" class="btn btn-light" style="width: 100%;">
+            See subject menu >>
+        </button>
+    </div>
+
+
+
+
+    <!-- Login modal start -->
+    <div class="modal" data-bs-backdrop="static" id="login_id">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">    Login To Your Account </h2>
+                   <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+ 
+ 
+                     <form action="" class=" p-3 shadow " >
+                   
+ 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="fname" class="form-label">First Name:</label>
+                            <input class="form-control form-control-sm" type="text" name="first_name" id="fname">
+                        </div>
+ 
+                        <div class="col-md-6">
+                            <label for="lname" class="form-label">Last Name:</label>
+                            <input class="form-control form-control-sm" type="text" name="last_name" id="lname">
+                        </div>
+                    </div>
+ 
+                    <!-- form input group -->
+                   
+ 
+                    <input class="form-control my-2" type="email" name="email" id="email" placeholder="Email">
+                    <input class="form-control" type="password" name="psw" id="psw" placeholder="Password">
+ 
+                <!-- form floating -->
+                <div class="form-floating my-3">
+                   <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                   <label for="floatingEmail">Username(optional)</label>
+                </div>        
+               </div>
+ 
+                <div class="modal-footer">
+                    <a href="#register_id" data-bs-toggle="modal">Go to Register</a>
+                 <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                  <button class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+ 
+               
+                </div>
+ 
+            </div>
+         </div>
+    </div>
+    <!-- Login Modal end -->
+ 
+ 
+    <!-- Register modal start -->
+    <div class="modal" data-bs-backdrop="static" id="register_id">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                   
+                   
+                   <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+ 
+                    <form action="" class="bg-primary-subtle p-3 shadow ">
+                    <h2>Signup Form</h2>
+ 
+ 
+                    <!-- form input group -->
+                   
+ 
+                    <input class="form-control my-2" type="email" name="email" id="email" placeholder="Email">
+                    <input class="form-control" type="password" name="psw" id="psw" placeholder="Password">
+ 
+                <!-- form floating -->
+                <div class="form-floating my-3">
+                   <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                   <label for="floatingEmail">Confirm Password</label>
+                </div>
+ 
+               
+                    <link rel="stylesheet" href="#login_id">
+ 
+                   
+                   
+ 
+                </form>
+ 
+                    </div>
+ 
+                <div class="modal-footer">
+                    <a href="#login_id" data-bs-toggle="modal">Go to Login</a>
+                 <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                 <button class="btn btn-primary" data-bs-dismiss="modal">Register</button>
+               
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+    <!-- Register Modal end -->
+
+    <!-- large screen -->
+    <div class="container-fluid catagory-container">
+        <div class="row">
+            <div class="col-md-2" style="background-color: rgb(215, 199, 226); height: 100%;">
+                <ul class="list-group list-group-flush">
+                    <h3>IGCSE SUBJECTS</h3>
+                    <hr>
+                    <p>Core subjects</p>
+                    <li class="list-group-item active my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#eng"><h5>English</h5></li>
+                    <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#math"><h5>Mathematic</h5></li>
+                    <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#sci"><h5>Science</h5></li>
+                    
+                    <p>Elective subjects</p>
+                    <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#bs"><h5>Business Studies</h5></li>
+                    <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#eco"><h5>Economics</h5></li>
+                    <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#acc"><h5>Accounting</h5></li>
+                    <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#ict"><h5>ICT</h5></li>
+                    <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#cs"><h5>Computer Science</h5></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="eng">
+                        <h3>English</h3>
+                        <h5>What is English?</h5>
+                        <p>IGCSE English helps students improve reading, writing and communication skills. Students learn how to understand texts, write clearly and express ideas with confidence.</p>
+                        <br><br>
+                        <h5>What do students learn from it?</h5>
+                        <p>Students practise writing essays, stories and reports. They also learn grammar, vocabulary and how to analyse texts.</p>
+                        <br><br>
+                        <h5>Why is it important to learn English?</h5>
+                        <p>English is useful in every subject and helps students succeed in school and in future careers.</p>
+ 
+                    </div>
+                    <div class="tab-pane" id="math">
+                        <h3>Mathemathic</h3>
+                        <h5>What is Mathematics?</h5>
+                        <p>Mathematics teaches students how to solve problems using numbers, formulas and logical thinking.</p>
+                        <br><br>
+                        <h5>What do students learn from it?</h5>
+                        <p>Students study topics like algebra, geometry, fractions, graphs and statistics. They also learn how to apply maths to real-life situations.</p>
+                        <br><br>
+                        <h5>Why is it important to learn Mathematic?</h5>
+                        <p>maths helps students think clearly and is useful for science, business and many careers.</p>
+                    </div>
+                    <div class="tab-pane" id="sci">
+                        <h3>Science</h3>
+                        <h5>What is Science?</h5>
+                        <p>IGCSE Science helps students understand how the world works through experiments and scientific ideas.</p>
+
+                        <br><br>
+                        
+                        <h5>What do students learn from it?</h5>
+                        <p>Students study Biology, Chemistry and Physics. They learn about the human body, energy, matter and the environment.</p>
+                        
+                        <br><br>
+                        
+                       <h5>Why is it important to learn Science?</h5>
+                        <p>Science helps students develop curiosity and problem-solving skills that are useful in everyday life.</p>
+                    </div>
+                    <div class="tab-pane" id="bs">
+                        <h3>Business Studies</h3>
+                        <h5>What is Business Studies?</h5>
+                        <p>IGCSE Business Studies teaches students how businesses work and how companies make decisions.</p>
+                        
+                        <br><br>
+                        
+                        <h5>What do students learn from it?</h5>
+                        <p>Students learn about marketing, finance, customers and how to manage a business. They also study how businesses grow and succeed.</p>
+                        
+                        <br><br>
+                        
+                        <h5>Why is it important to learn Business Studies?</h5>
+                        <p>It helps students understand the business world and is useful for future careers in business or management.</p>
+                    </div>
+                    <div class="tab-pane" id="eco">
+                        <h3>Economics</h3>
+                        <h5>What is Economics?</h5>
+                        <p>IGCSE Economics teaches students how money, jobs and businesses affect everyday life.</p>
+                        
+                        <br><br>
+                        
+                        <h5>What do students learn from it?</h5>
+                        <p>Students study supply and demand, prices, trade and how governments manage the economy.</p>
+                        
+                        <br><br>
+                        
+                        <h5>Why is it important to learn Economics?</h5>
+                        <p>Economics helps students understand how the world works and how financial decisions are made.</p>
+                    </div>
+                    <div class="tab-pane" id="acc">
+                        <h3>Accounting</h3>
+                        <h5>What is Accounting?</h5>
+                        <p>IGCSE Accounting teaches students how to record and manage financial information.</p>
+
+                        <br><br>
+                        
+                        <h5>What do students learn from it?</h5>
+                        <p>Students learn how to prepare accounts, track income and expenses and understand profit and loss.</p>
+
+                        <br><br>
+                        
+                        <h5>Why is it important to learn Accounting?</h5>
+                        <p>Accounting is important for business and helps students develop strong organisational skills.</p>
+                    </div>
+                    <div class="tab-pane" id="ict">
+                        <h3>ICT</h3>
+                        <h5>What is ICT?</h5>
+                        <p>IGCSE ICT teaches students how to use technology safely and effectively.</p>
+
+                        <br><br>
+                        
+                        <h5>What do students learn from it?</h5>
+                        <p>Students learn how to use computers, create documents, work with data and understand how digital systems work.</p>
+
+                        <br><br>
+                        
+                        <h5>Why is it important to learn ICt?</h5>
+                        <p>ICT skills are needed in almost every job and help students stay confident in a digital world.</p>
+                    </div>
+                    <div class="tab-pane" id="cs">
+                        <h3>Computer Science</h3>
+                        <h5>What is Computer Science?</h5>
+                        <p>IGCSE Computer Science teaches students how computers work and how software is created. It helps students understand technology in a deeper way.</p>
+
+                        <br><br>
+                        
+                        <h5>What do students learn from it?</h5>
+                        <p>Students learn programming, problem-solving and how data is stored and processed. They also study topics like algorithms, computer systems and cybersecurity basics.</p>
+                        
+                        <br><br>
+                        
+                        <h5>Why is it important to learn Computer Science?</h5>
+                        <p>Computer Science helps students develop logical thinking skills and prepares them for future careers in technology and programming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- to connect with nav bar -->
+    <div class="offcanvas offcanvas-start" id="subjectMenu" data-bs-scroll="true" data-bs-backdrop="static"> <!-- data-bs-backdrop="static" prevent from closing after we clikc the backdrop.  data-bs-scroll="true" lets us scroll in the back while the offcanvas is opened  -->
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">IGCSE SUBJECTS</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group list-group-flush">
+                <h3>IGCSE SUBJECTS</h3>
+                <hr>
+                <p>Core subjects</p>
+                <li class="list-group-item active my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#eng_offc"><h5>English</h5></li>
+                <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#math_offc"><h5>Mathematic</h5></li>
+                <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#sci_offc"><h5>Science</h5></li>
+                    
+                <p>Elective subjects</p>
+                <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#bs_offc"><h5>Business Studies</h5></li>
+                <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#eco_offc"><h5>Economics</h5></li>
+                <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#acc_offc"><h5>Accounting</h5></li>
+                <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#ict_offc"><h5>ICT</h5></li>
+                <li class="list-group-item my-1 p-2 list_style_hover" data-bs-toggle="list" style="background-color: rgb(83, 72, 93);" data-bs-target="#cs_offc"><h5>Computer Science</h5></li>
+            </ul>
+        </div>
+    </div>
+    <div class="text-screenResponsive-container tab-content p-2">
+        <div class="tab-pane active" id="eng_offc">
+            <h3>English</h3>
+            <h5 class="fw-bold">What is English in IGCSE?</h5>
+            <p>IGCSE English helps students improve reading, writing and communication skills. Students learn how to understand texts, write clearly and express ideas with confidence.</p>
+            <br><br>
+            <h5>What do students learn?</h5>
+            <p>Students practise writing essays, stories and reports. They also learn grammar, vocabulary and how to analyse texts.</p>
+            <br><br>
+            <h5>Why is it important?</h5>
+            <p>English is useful in every subject and helps students succeed in school and in future careers.</p>
+ 
+        </div>
+        <div class="tab-pane" id="math_offc">
+            <h3>Mathemathic</h3>
+            <h5>What is Mathematics in IGCSE?</h5>
+            <p>IGCSE Mathematics teaches students how to solve problems using numbers, formulas and logical thinking.</p>
+            <br><br>
+            <h5>What do students learn?</h5>
+            <p>Students study topics like algebra, geometry, fractions, graphs and statistics. They also learn how to apply maths to real-life situations.</p>
+            <br><br>
+            <h5>Why is it important?</h5>
+            <p>maths helps students think clearly and is useful for science, business and many careers.</p>
+        </div>
+        <div class="tab-pane" id="sci_offc">
+            <h3>Science</h3>
+            <h5>What is Science in IGCSE?</h5>
+            <p>IGCSE Science helps students understand how the world works through experiments and scientific ideas.</p>
+
+            <br><br>
+                        
+            <h5>What do students learn?</h5>
+            <p>Students study Biology, Chemistry and Physics. They learn about the human body, energy, matter and the environment.</p>
+                        
+            <br><br>
+                        
+            <h5>Why is it important?</h5>
+            <p>Science helps students develop curiosity and problem-solving skills that are useful in everyday life.</p>
+        </div>
+        <div class="tab-pane" id="bs_offc">
+            <h3>Business Studies</h3>
+            <h5>What is Business Studies in IGCSE?</h5>
+            <p>IGCSE Business Studies teaches students how businesses work and how companies make decisions.</p>
+                        
+            <br><br>
+                        
+            <h5>What do students learn?</h5>
+            <p>Students learn about marketing, finance, customers and how to manage a business. They also study how businesses grow and succeed.</p>
+                        
+            <br><br>
+                        
+            <h5>Why is it important?</h5>
+            <p>It helps students understand the business world and is useful for future careers in business or management.</p>
+        </div>
+         <div class="tab-pane" id="eco_offc">
+            <h3>Economics</h3>
+            <h5>What is Economics in IGCSE?</h5>
+            <p>IGCSE Economics teaches students how money, jobs and businesses affect everyday life.</p>
+                        
+            <br><br>
+                        
+            <h5>What do students learn?</h5>
+            <p>Students study supply and demand, prices, trade and how governments manage the economy.</p>
+                        
+            <br><br>
+                        
+            <h5>Why is it important?</h5>
+            <p>Economics helps students understand how the world works and how financial decisions are made.</p>
+        </div>
+        <div class="tab-pane" id="acc_offc">
+            <h3>Accounting</h3>
+            <h5>What is Accounting in IGCSE?</h5>
+            <p>IGCSE Accounting teaches students how to record and manage financial information.</p>
+
+            <br><br>
+                        
+            <h5>IGCSE Accounting teaches students how to record and manage financial information.</h5>
+            <p>Students learn how to prepare accounts, track income and expenses and understand profit and loss.</p>
+
+            <br><br>
+                        
+            <h5>Why is it important?</h5>
+            <p>Accounting is important for business and helps students develop strong organisational skills.</p>
+        </div>
+        <div class="tab-pane" id="ict_offc">
+            <h3>ICT</h3>
+            <h5>What is ICT in IGCSE?</h5>
+             <p>IGCSE ICT teaches students how to use technology safely and effectively.</p>
+
+            <br><br>
+                        
+            <h5>What do students learn?</h5>
+            <p>Students learn how to use computers, create documents, work with data and understand how digital systems work.</p>
+
+            <br><br>
+                        
+            <h5>Why is it important?</h5>
+            <p>ICT skills are needed in almost every job and help students stay confident in a digital world.</p>
+        </div>
+        <div class="tab-pane" id="cs_offc">
+            <h3>Computer Science</h3>
+            <h5>What is Computer Science in IGCSE?</h5>
+            <p>IGCSE Computer Science teaches students how computers work and how software is created. It helps students understand technology in a deeper way.</p>
+
+            <br><br>
+                        
+            <h5>What do students learn?</h5>
+            <p>Students learn programming, problem-solving and how data is stored and processed. They also study topics like algorithms, computer systems and cybersecurity basics.</p>
+                        
+            <br><br>
+                        
+            <h5>Why is it important?</h5>
+            <p>Computer Science helps students develop logical thinking skills and prepares them for future careers in technology and programming.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrip CDN JS Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
